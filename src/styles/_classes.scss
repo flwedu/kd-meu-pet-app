@@ -25,19 +25,29 @@
 
   font-size: 1rem;
   background-color: $color--grey-100;
-  margin: 0.5rem;
   text-align: center;
   padding: 0.7rem 1rem;
 }
 
 .form {
-  width: 25rem;
+  width: 23rem;
   min-height: min-content;
   padding: 1rem;
   margin: 2rem;
 
   text-align: center;
   background-color: $color--light-100;
+
+  &-field {
+    @include rounded(6px);
+
+    padding: 1rem;
+    border: $color--grey-100 1px solid;
+  }
+
+  * {
+    margin: 0.5rem 0.25rem;
+  }
 }
 
 .rounded {
