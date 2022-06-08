@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LoginForm component tests should render the component properly 1`] = `
+<div>
+  <form
+    class="form form-login align-center flex flex-col rounded"
+  >
+    <div>
+      <h2>
+        Bem vindo!
+      </h2>
+      <p>
+        Por favor, se identifique:
+      </p>
+      <div
+        class="field"
+      >
+        <input
+          class="input"
+          name="username"
+          placeholder="Usuário / E-mail"
+          type="text"
+        />
+      </div>
+      <div
+        class="field"
+      >
+        <input
+          class="input"
+          name="password"
+          placeholder="Senha"
+          type="password"
+        />
+      </div>
+    </div>
+  </form>
+</div>
+`;
