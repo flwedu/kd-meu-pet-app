@@ -11,3 +11,7 @@ body {
 * {
   color: $color--grey-700;
 }
+
+textarea {
+  resize: vertical;
+}

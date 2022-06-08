@@ -7,6 +7,10 @@
   &-col {
     flex-direction: column;
   }
+
+  &-row {
+    flex-direction: row;
+  }
 }
 
 .align {
@@ -17,7 +21,9 @@
 
 .input {
   @include rounded(3px);
+  width: 15rem;
 
+  font-size: 1rem;
   background-color: $color--grey-100;
   margin: 0.5rem;
   text-align: center;
@@ -25,14 +31,21 @@
 }
 
 .form {
-  &-login {
-    @include size(25rem, 15rem);
+  width: 25rem;
+  min-height: min-content;
+  padding: 1rem;
+  margin: 2rem;
 
-    text-align: center;
-    background-color: $color--light-100;
-  }
+  text-align: center;
+  background-color: $color--light-100;
 }
 
 .rounded {
   @include rounded(15px);
+}
+
+// Specific
+.radio-group {
+  font-size: 2rem;
+  align-items: center;
 }
