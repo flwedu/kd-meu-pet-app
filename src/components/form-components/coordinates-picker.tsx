@@ -1,7 +1,10 @@
 import { useEffect, useState } from "react";
 import MapPicker from "react-google-map-picker";
 
-export function CoordinatesPicker(props: { onChange: (e: any) => void }) {
+export function CoordinatesPicker(props: {
+  spanText: string;
+  onChange: (e: any) => void;
+}) {
   const DefaultZoom = 10;
   // Brasilia location
   const DefaultLocation = { lat: -15.793889, lng: -47.882778 };
@@ -48,7 +51,8 @@ export function CoordinatesPicker(props: { onChange: (e: any) => void }) {
   }
 
   return (
-    <div>
+    <div className="form-field">
+      <span>{props.spanText}</span>
       <MapPicker
         defaultLocation={defaultLocation}
         zoom={zoom}

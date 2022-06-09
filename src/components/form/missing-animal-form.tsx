@@ -25,15 +25,16 @@ export function MissingAnimalForm() {
   return (
     <div className="form rounded flex flex-col">
       <h2>Registrar animal desaparecido</h2>
+
       <form onSubmit={handleSubmit}>
         <div className="form-field">
-          <PickerGroup
-            disabled={false}
-            spanText="Qual a espécie?"
-            name="specie"
-            options={specieOptions}
-            onChange={handleInputChange}
-          />
+        <PickerGroup
+          disabled={false}
+          spanText="Qual a espécie?"
+          name="specie"
+          options={specieOptions}
+          onChange={handleInputChange}
+        />
         </div>
         <div className="form-field">
           <span>Nome (apelido) do animal:</span>
@@ -75,10 +76,10 @@ export function MissingAnimalForm() {
           <input type="file" name="picture" id="picture" />
         </div>
 
-        <div className="form-field">
-          <span>Última localização:</span>
-          <CoordinatesPicker onChange={handleInputChange} />
-        </div>
+        <CoordinatesPicker
+          spanText="Última localização:"
+          onChange={handleInputChange}
+        />
 
         <input type="submit" value="Cadastrar" />
       </form>

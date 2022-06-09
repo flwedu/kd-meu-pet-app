@@ -33,11 +33,11 @@ export function PickerGroup(props: PickerProps) {
   }
 
   return (
-    <>
+    <div className="form-field">
       <span>{props.spanText}</span>
       <div className="radio-group flex flex-col">
         {props.options.map(renderOption)}
       </div>
-    </>
+    </div>
   );
 }
