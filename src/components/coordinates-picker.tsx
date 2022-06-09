@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import MapPicker from "react-google-map-picker";
 
-export function CoordinatesPicker() {
+export function CoordinatesPicker(props: { onChange: (e: any) => void }) {
   const DefaultZoom = 10;
   // Brasilia location
   const DefaultLocation = { lat: -15.793889, lng: -47.882778 };
@@ -18,12 +18,23 @@ export function CoordinatesPicker() {
         lat: location.coords.latitude,
         lng: location.coords.longitude,
       });
-      setLocation(defaultLocation);
-    });
+      setLocation({
+        lat: location.coords.latitude,
+        lng: location.coords.longitude,
+      });
+    }, onGpsError);
+  }
+  function onGpsError() {
+    setLocation(defaultLocation);
   }
 
   function handleChangeLocation(lat: number, lng: number) {
-    setLocation({ lat: lat, lng: lng });
+    props.onChange({
+      currentTarget: {
+        name: "location",
+        value: { lat: lat, lng: lng },
+      },
+    });
   }
 
   function handleChangeZoom(newZoom: number) {
