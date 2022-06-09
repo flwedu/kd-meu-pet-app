@@ -1,6 +1,6 @@
-import { FormEvent, useState } from "react";
-import { CoordinatesPicker } from "../coordinates-picker";
-import { PickerGroup } from "../shared/picker-group";
+import { useState } from "react";
+import { CoordinatesPicker } from "../form-components/coordinates-picker";
+import { PickerGroup } from "../form-components/picker-group";
 
 export function MissingAnimalForm() {
   const [data, setData] = useState({});
