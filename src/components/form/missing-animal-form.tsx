@@ -43,6 +43,7 @@ export function MissingAnimalForm() {
             name="name"
             id="name"
             onChange={handleInputChange}
+            required
           />
         </div>
         <div className="form-field">

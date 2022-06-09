@@ -25,6 +25,7 @@ export function PickerGroup(props: PickerProps) {
           value={item.id}
           alt={item.alt}
           onChange={props.onChange}
+          required
         />{" "}
         {item.text}
       </div>
@@ -34,7 +35,7 @@ export function PickerGroup(props: PickerProps) {
   return (
     <>
       <span>{props.spanText}</span>
-      <div key={props.name} className="radio-group flex flex-col">
+      <div className="radio-group flex flex-col">
         {props.options.map(renderOption)}
       </div>
     </>

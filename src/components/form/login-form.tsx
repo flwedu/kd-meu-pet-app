@@ -27,6 +27,7 @@ export function LoginForm() {
             name="username"
             className="input"
             placeholder="Usuário / E-mail"
+            required
           />
         </div>
         <div className="field">
@@ -35,6 +36,7 @@ export function LoginForm() {
             name="password"
             className="input"
             placeholder="Senha"
+            required
           />
         </div>
       </div>
