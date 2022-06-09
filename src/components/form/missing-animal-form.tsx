@@ -8,7 +8,7 @@ export function MissingAnimalForm() {
   const specieOptions = [
     { id: "cat", text: "🐱 Gato", alt: "Gato" },
     { id: "dog", text: "🐶 Cachorro", alt: "Cachorro" },
-    { id: "bird", text: "🐦 Pássaro", alt: "Pássaro" },
+    { id: "other", text: "❓ Outros", alt: "Outros" },
   ];
 
   return (

@@ -14,10 +14,10 @@ type PickerProps = {
 export function PickerGroup(props: PickerProps) {
   function renderOption(item: PickerOption, index: number) {
     return (
-      <>
+      <div>
         <input
-          disabled={props.disabled}
           key={index}
+          disabled={props.disabled}
           type="radio"
           name={props.name}
           id={item.id}
@@ -25,14 +25,14 @@ export function PickerGroup(props: PickerProps) {
           alt={item.alt}
         />{" "}
         {item.text}
-      </>
+      </div>
     );
   }
 
   return (
     <>
       <span>{props.spanText}</span>
-      <div key={props.name} className="radio-group">
+      <div key={props.name} className="radio-group flex flex-col">
         {props.options.map(renderOption)}
       </div>
     </>
