@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { ColorPicker } from "../form-components/color-picker";
 import { CoordinatesPicker } from "../form-components/coordinates-picker";
 import { PickerGroup } from "../form-components/picker-group";
 
@@ -27,7 +28,6 @@ export function MissingAnimalForm() {
       <h2>Registrar animal desaparecido</h2>
 
       <form onSubmit={handleSubmit}>
-        <div className="form-field">
         <PickerGroup
           disabled={false}
           spanText="Qual a espécie?"
@@ -35,7 +35,7 @@ export function MissingAnimalForm() {
           options={specieOptions}
           onChange={handleInputChange}
         />
-        </div>
+
         <div className="form-field">
           <span>Nome (apelido) do animal:</span>
           <input
@@ -59,18 +59,18 @@ export function MissingAnimalForm() {
             onChange={handleInputChange}
           ></textarea>
         </div>
-        <div className="form-field">
-          <PickerGroup
-            disabled={false}
-            name="sex"
-            spanText="Sexo?"
-            options={[
-              { id: "male", text: "M", alt: "Macho" },
-              { id: "female", text: "F", alt: "Fêmea" },
-            ]}
-            onChange={handleInputChange}
-          />
-        </div>
+        <ColorPicker />
+
+        <PickerGroup
+          disabled={false}
+          name="sex"
+          spanText="Sexo?"
+          options={[
+            { id: "male", text: "M", alt: "Macho" },
+            { id: "female", text: "F", alt: "Fêmea" },
+          ]}
+          onChange={handleInputChange}
+        />
         <div className="form-field">
           <span>Anexe uma foto do desaparecido:</span>
           <input type="file" name="picture" id="picture" />
