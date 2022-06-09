@@ -1,4 +1,5 @@
 import { useState } from "react";
+import GoogleMaps from "../maps";
 import { PickerGroup } from "../shared/picker-group";
 
 export function MissingAnimalForm() {
@@ -55,7 +56,7 @@ export function MissingAnimalForm() {
 
         <div className="form-field">
           <span>Última localização:</span>
-          <div style={{ height: "10rem", background: "green" }}></div>
+          <GoogleMaps />
         </div>
 
         <input type="submit" value="Cadastrar" />
