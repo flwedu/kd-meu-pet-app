@@ -1,4 +1,4 @@
-type PickerOption = {
+export type PickerOption = {
   id: string;
   alt: string;
   text: string;

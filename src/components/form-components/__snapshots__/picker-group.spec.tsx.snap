@@ -1,0 +1,44 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PickerGroup component tests should render the component properly With one children 1`] = `
+<div>
+  <div
+    class="form-field"
+  >
+    <span>
+      Testing Text
+    </span>
+    <div
+      class="radio-group flex flex-col"
+    >
+      <div>
+        <input
+          alt="first alt"
+          id="first"
+          name="Tests"
+          required=""
+          type="radio"
+          value="first"
+        />
+         
+        First text
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`PickerGroup component tests should render the component properly With zero children 1`] = `
+<div>
+  <div
+    class="form-field"
+  >
+    <span>
+      Testing Text
+    </span>
+    <div
+      class="radio-group flex flex-col"
+    />
+  </div>
+</div>
+`;
