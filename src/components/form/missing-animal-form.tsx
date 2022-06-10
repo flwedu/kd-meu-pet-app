@@ -2,6 +2,7 @@ import { useState } from "react";
 import { ColorPicker } from "../form-components/color-picker";
 import { GoogleCoordinatesPicker } from "../form-components/google-coordinates-picker";
 import { PickerGroup } from "../form-components/picker-group";
+import { RequiredTextField } from "../form-components/required-text-field";
 
 export function MissingAnimalForm() {
   const [data, setData] = useState({});
@@ -12,7 +13,7 @@ export function MissingAnimalForm() {
     { id: "other", text: "❓ Outros", alt: "Outros" },
   ];
 
-  function handleInputChange(e: any) {
+  function handleChange(e: any) {
     const { name, value } = e.currentTarget;
 
     setData({ ...data, [name]: value });
@@ -33,20 +34,17 @@ export function MissingAnimalForm() {
           spanText="Qual a espécie?"
           name="specie"
           options={specieOptions}
-          onChange={handleInputChange}
+          onChange={handleChange}
         />
 
-        <div className="form-field">
-          <span>Nome (apelido) do animal:</span>
-          <input
-            className="input"
-            type="text"
-            name="name"
-            id="name"
-            onChange={handleInputChange}
-            required
-          />
-        </div>
+        <RequiredTextField
+          name="name"
+          spanText="Nome (apelido) do animal"
+          placeholder=""
+          type="text"
+          onChange={handleChange}
+          bordered={true}
+        />
         <div className="form-field">
           <span>Descrição:</span>
           <textarea
@@ -56,7 +54,7 @@ export function MissingAnimalForm() {
             placeholder="digite uma descrição em até 250 caracteres"
             rows={5}
             maxLength={250}
-            onChange={handleInputChange}
+            onChange={handleChange}
           ></textarea>
         </div>
         <ColorPicker />
@@ -69,7 +67,7 @@ export function MissingAnimalForm() {
             { id: "male", text: "M", alt: "Macho" },
             { id: "female", text: "F", alt: "Fêmea" },
           ]}
-          onChange={handleInputChange}
+          onChange={handleChange}
         />
         <div className="form-field">
           <span>Anexe uma foto do desaparecido:</span>
@@ -78,7 +76,7 @@ export function MissingAnimalForm() {
 
         <GoogleCoordinatesPicker
           spanText="Última localização:"
-          onChange={handleInputChange}
+          onChange={handleChange}
         />
 
         <input className="button" type="submit" value="Cadastrar" />

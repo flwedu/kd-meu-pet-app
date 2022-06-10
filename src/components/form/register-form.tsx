@@ -1,4 +1,5 @@
 import { FormEvent, useState } from "react";
+import { RequiredTextField } from "../form-components/required-text-field";
 
 export function RegisterForm() {
   const [data, setData] = useState({ username: "", password: "" });
@@ -21,51 +22,36 @@ export function RegisterForm() {
       <div onChange={handleChange}>
         <h2>Formulário de cadastro</h2>
         <p>Por favor, insira seus dados abaixo</p>
-        <div className="field">
-          <input
-            type="text"
-            name="name"
-            className="input"
-            placeholder="Nome completo"
-            required
-          />
-        </div>
-        <div className="field">
-          <input
-            type="text"
-            name="username"
-            className="input"
-            placeholder="Usuário"
-            required
-          />
-        </div>
-        <div className="field">
-          <input
-            type="email"
-            name="email"
-            className="input"
-            placeholder="E-mail"
-            required
-          />
-        </div>
-        <div className="field">
-          <input
-            type="password"
-            name="password"
-            className="input"
-            placeholder="Senha"
-            required
-          />
-        </div>
-        <div className="field">
-          <input
-            type="password"
-            name="password2"
-            className="input"
-            placeholder="Repita a senha"
-            required
-          />
-        </div>
+        <RequiredTextField
+          name="name"
+          placeholder="Nome completo"
+          type="text"
+          onChange={handleChange}
+        />
+        <RequiredTextField
+          name="username"
+          placeholder="Username"
+          type="text"
+          onChange={handleChange}
+        />
+        <RequiredTextField
+          name="email"
+          placeholder="E-mail"
+          type="email"
+          onChange={handleChange}
+        />
+        <RequiredTextField
+          name="password"
+          placeholder="Senha"
+          type="password"
+          onChange={handleChange}
+        />
+        <RequiredTextField
+          name="password2"
+          placeholder="Repita a senha"
+          type="password"
+          onChange={handleChange}
+        />
       </div>
     </form>
   );
