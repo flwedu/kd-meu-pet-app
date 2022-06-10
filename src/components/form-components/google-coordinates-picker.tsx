@@ -6,11 +6,6 @@ type Location = {
   lng: number;
 };
 
-const containerStyle = {
-  width: "20rem",
-  height: "20rem",
-};
-
 const DefaultZoom = 10;
 const salvadorCoordinates = {
   lat: -12.974722,
@@ -77,7 +72,7 @@ function MapComponent(props: { spanText: string }) {
     <div className="form-group">
       <span>{props.spanText}</span>
       <GoogleMap
-        mapContainerStyle={containerStyle}
+        id="map"
         center={location ? location : defaultLocation}
         zoom={zoom}
         onLoad={onLoad}

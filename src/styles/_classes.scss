@@ -40,13 +40,19 @@
 }
 
 .form {
-  width: 23rem;
+  width: 100%;
   min-height: min-content;
   padding: 1rem;
   margin: 2rem;
 
   text-align: center;
   background-color: $color--light-100;
+
+  &-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 
   &-field {
     @include rounded(6px);
