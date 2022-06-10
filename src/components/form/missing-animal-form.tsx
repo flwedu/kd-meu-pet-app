@@ -76,7 +76,10 @@ export function MissingAnimalForm() {
           <input type="file" name="picture" id="picture" />
         </div>
 
-        <GoogleCoordinatesPicker spanText="Última localização:" />
+        <GoogleCoordinatesPicker
+          spanText="Última localização:"
+          onChange={handleInputChange}
+        />
 
         <input className="button" type="submit" value="Cadastrar" />
       </form>

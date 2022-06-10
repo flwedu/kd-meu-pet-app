@@ -12,7 +12,7 @@ const salvadorCoordinates = {
   lng: -38.476665,
 };
 
-function MapComponent(props: { spanText: string }) {
+function MapComponent(props: { spanText: string; onChange: (e: any) => void }) {
   const { isLoaded } = useJsApiLoader({
     id: "google-map-script",
     googleMapsApiKey: import.meta.env.VITE_GOOGLE_MAPS_KEY,
@@ -61,6 +61,12 @@ function MapComponent(props: { spanText: string }) {
         lng: e.latLng?.lng()!,
       });
     }
+    props.onChange({
+      currentTarget: {
+        name: "location",
+        value: location,
+      },
+    });
   }
 
   function handleResetClick() {
