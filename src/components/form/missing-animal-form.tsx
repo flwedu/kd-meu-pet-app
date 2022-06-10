@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { ColorPicker } from "../form-components/color-picker";
-import { CoordinatesPicker } from "../form-components/coordinates-picker";
+import { GoogleCoordinatesPicker } from "../form-components/google-coordinates-picker";
 import { PickerGroup } from "../form-components/picker-group";
 
 export function MissingAnimalForm() {
@@ -76,12 +76,9 @@ export function MissingAnimalForm() {
           <input type="file" name="picture" id="picture" />
         </div>
 
-        <CoordinatesPicker
-          spanText="Última localização:"
-          onChange={handleInputChange}
-        />
+        <GoogleCoordinatesPicker spanText="Última localização:" />
 
-        <input type="submit" value="Cadastrar" />
+        <input className="button" type="submit" value="Cadastrar" />
       </form>
     </div>
   );
