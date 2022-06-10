@@ -1,10 +1,26 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import App from "./App";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import {
+  HomePage,
+  LoginPage,
+  MissingAnimalPage,
+  RegisterPage,
+} from "./components/pages";
+
 import "./styles/index.scss";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
-    <App />
+    <BrowserRouter>
+      <h1>Kd Meu Pet?</h1>
+      <Routes>
+        <Route path="/" element={<HomePage />}>
+          <Route path="login" element={<LoginPage />} />
+          <Route path="register" element={<RegisterPage />} />
+          <Route path="missing" element={<MissingAnimalPage />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   </React.StrictMode>
 );
