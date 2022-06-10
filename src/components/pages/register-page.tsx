@@ -1,3 +1,5 @@
+import { RegisterForm } from "../form/register-form";
+
 export function RegisterPage() {
-  return <></>;
+  return <RegisterForm></RegisterForm>;
 }
