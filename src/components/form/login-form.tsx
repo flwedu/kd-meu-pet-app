@@ -1,4 +1,5 @@
 import { FormEvent, useState } from "react";
+import { RequiredTextField } from "../form-components/required-text-field";
 
 export function LoginForm() {
   const [data, setData] = useState({ username: "", password: "" });
@@ -21,24 +22,18 @@ export function LoginForm() {
       <div onChange={handleChange}>
         <h2>Bem vindo!</h2>
         <p>Por favor, se identifique:</p>
-        <div className="field">
-          <input
-            type="text"
-            name="username"
-            className="input"
-            placeholder="Usuário / E-mail"
-            required
-          />
-        </div>
-        <div className="field">
-          <input
-            type="password"
-            name="password"
-            className="input"
-            placeholder="Senha"
-            required
-          />
-        </div>
+        <RequiredTextField
+          name="username"
+          placeholder="Nome de usuário"
+          type="text"
+          onChange={handleChange}
+        />
+        <RequiredTextField
+          name="pasword"
+          placeholder="Senha"
+          type="password"
+          onChange={handleChange}
+        />
       </div>
     </form>
   );

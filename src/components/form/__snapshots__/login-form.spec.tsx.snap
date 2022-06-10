@@ -18,7 +18,7 @@ exports[`LoginForm component tests should render the component properly 1`] = `
         <input
           class="input"
           name="username"
-          placeholder="Usuário / E-mail"
+          placeholder="Nome de usuário"
           required=""
           type="text"
         />
@@ -28,7 +28,7 @@ exports[`LoginForm component tests should render the component properly 1`] = `
       >
         <input
           class="input"
-          name="password"
+          name="pasword"
           placeholder="Senha"
           required=""
           type="password"
