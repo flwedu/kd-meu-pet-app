@@ -15,9 +15,8 @@ type PickerProps = {
 export function PickerGroup(props: PickerProps) {
   function renderOption(item: PickerOption) {
     return (
-      <div>
+      <div key={item.id}>
         <input
-          key={item.id}
           disabled={props.disabled}
           type="radio"
           name={props.name}
