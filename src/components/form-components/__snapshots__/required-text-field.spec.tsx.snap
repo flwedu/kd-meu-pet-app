@@ -19,7 +19,7 @@ exports[`Required Text Field component Should render a password component proper
 exports[`Required Text Field component Should render a text component properly 1`] = `
 <div>
   <div
-    class="field"
+    class="form-field"
   >
     <input
       class="input"

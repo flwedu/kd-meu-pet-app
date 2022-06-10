@@ -11,6 +11,7 @@ describe("Required Text Field component", () => {
       name: "test",
       type: "text",
       placeholder: "Test placeholder",
+      bordered: true,
       onChange: jest.fn(),
     };
 
