@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Required Text Field component Should render a password component properly 1`] = `
+<div>
+  <div
+    class="field"
+  >
+    <input
+      class="input"
+      name="test"
+      placeholder="Test placeholder"
+      required=""
+      type="password"
+    />
+  </div>
+</div>
+`;
+
+exports[`Required Text Field component Should render a text component properly 1`] = `
+<div>
+  <div
+    class="field"
+  >
+    <input
+      class="input"
+      name="test"
+      placeholder="Test placeholder"
+      required=""
+      type="text"
+    />
+  </div>
+</div>
+`;
