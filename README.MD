@@ -13,8 +13,8 @@ A aplicação só funcionará caso a [kd-meu-pet-api](https://github.com/flwedu/
 Uma vez que a API REST esteja rodando, crie um arquivo `.env` na raiz do projeto. Dentro desse arquivo adicione as seguintes configurações:
 
 ```text
-VITE_GOOGLE_MAPS_KEY=(👈Key para a API do Google Maps)
-VITE_API_URL=(👈url para o HOST onde a API do kd-meu-pet está sendo executada)
+VITE_GOOGLE_MAPS_KEY=(👈Key da API do Google Maps)
+VITE_API_URL=(👈url do HOST onde a API do kd-meu-pet está sendo executada)
 VITE_API_PORT=(👈número da porta onde a API do kd-meu-pet está escutando)
 ```
 
