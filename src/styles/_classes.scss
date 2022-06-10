@@ -10,6 +10,7 @@
 
   &-row {
     flex-direction: row;
+    align-items: center;
   }
 }
 
@@ -29,6 +30,15 @@
   padding: 0.7rem 1rem;
 }
 
+.button {
+  @include rounded(3px);
+  width: 10rem;
+  padding: 0.5rem;
+  text-align: center;
+  color: $color--light-100;
+  background-color: $color--blue-green;
+}
+
 .form {
   width: 23rem;
   min-height: min-content;
@@ -43,6 +53,10 @@
 
     padding: 1rem;
     border: $color--grey-100 1px solid;
+  }
+
+  li {
+    list-style-type: none;
   }
 
   * {
