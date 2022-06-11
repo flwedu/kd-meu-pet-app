@@ -1,5 +1,7 @@
-import { RegisterForm } from "../form/register-form";
+import { RegisterForm, RegisterFormData } from "../form/register-form";
 
 export function RegisterPage() {
-  return <RegisterForm></RegisterForm>;
+  function onSubmit(data: RegisterFormData) {}
+
+  return <RegisterForm onSubmit={onSubmit}></RegisterForm>;
 }

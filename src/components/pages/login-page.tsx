@@ -1,5 +1,7 @@
-import { LoginForm } from "../form/login-form";
+import { LoginForm, LoginFormData } from "../form/login-form";
 
 export function LoginPage() {
-  return <LoginForm />;
+  function onSubmit(data: LoginFormData) {}
+
+  return <LoginForm onSubmit={onSubmit} />;
 }
