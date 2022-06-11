@@ -1,8 +1,27 @@
 import { FormEvent, useState } from "react";
 import { RequiredTextField } from "../form-components/required-text-field";
 
-export function RegisterForm() {
-  const [data, setData] = useState({ username: "", password: "" });
+export type RegisterFormData = {
+  name: string;
+  username: string;
+  email: string;
+  password: string;
+};
+
+export function RegisterForm({
+  onSubmit,
+}: {
+  onSubmit: (data: RegisterFormData) => void;
+}) {
+  const [data, setData] = useState<
+    RegisterFormData & { confirmPassword: string }
+  >({
+    name: "",
+    username: "",
+    password: "",
+    confirmPassword: "",
+    email: "",
+  });
 
   function handleChange(e: FormEvent<HTMLInputElement>) {
     const { name, value } = e.currentTarget;
@@ -10,8 +29,11 @@ export function RegisterForm() {
     setData({ ...data, [name]: value });
   }
 
-  function handleSubmit() {
-    console.log("Submitted");
+  function handleSubmit(e: FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    if (e.currentTarget.checkValidity()) {
+      onSubmit(data);
+    }
   }
 
   return (
@@ -47,7 +69,7 @@ export function RegisterForm() {
           onChange={handleChange}
         />
         <RequiredTextField
-          name="password2"
+          name="confirmPassword"
           placeholder="Repita a senha"
           type="password"
           onChange={handleChange}
