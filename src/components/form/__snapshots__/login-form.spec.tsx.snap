@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`LoginForm component tests should render the component properly 1`] = `
+exports[`LoginForm component tests should render the component properly with the username and password fields 1`] = `
 <div>
   <form
     class="form form-login align-center flex flex-col rounded"
