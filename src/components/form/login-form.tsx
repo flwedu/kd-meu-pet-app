@@ -1,12 +1,20 @@
 import { FormEvent, useState } from "react";
 import { RequiredTextField } from "../form-components/required-text-field";
 
+export type LoginFormData = {
+  username: string;
+  password: string;
+};
+
 export function LoginForm({
   onSubmit,
 }: {
-  onSubmit: (username: string, password: string) => void;
+  onSubmit: (data: LoginFormData) => void;
 }) {
-  const [data, setData] = useState({ username: "", password: "" });
+  const [data, setData] = useState<LoginFormData>({
+    username: "",
+    password: "",
+  });
 
   function handleChange(e: FormEvent<HTMLInputElement>) {
     const { name, value } = e.currentTarget;
@@ -14,14 +22,10 @@ export function LoginForm({
     setData({ ...data, [name]: value });
   }
 
-  function checkFormValidity(form: HTMLFormElement) {
-    return form.checkValidity();
-  }
-
   function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    if (checkFormValidity(e.currentTarget)) {
-      onSubmit(data.username, data.password);
+    if (e.currentTarget.checkValidity()) {
+      onSubmit(data);
     }
   }
 
