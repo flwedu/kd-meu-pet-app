@@ -41,35 +41,40 @@ export function RegisterForm({
       className="form form-login align-center flex flex-col rounded"
       onSubmit={handleSubmit}
     >
-      <div onChange={handleChange}>
+      <div>
         <h2>Formulário de cadastro</h2>
         <p>Por favor, insira seus dados abaixo</p>
         <RequiredTextField
           name="name"
+          value={data.name}
           placeholder="Nome completo"
           type="text"
           onChange={handleChange}
         />
         <RequiredTextField
           name="username"
+          value={data.username}
           placeholder="Username"
           type="text"
           onChange={handleChange}
         />
         <RequiredTextField
           name="email"
+          value={data.email}
           placeholder="E-mail"
           type="email"
           onChange={handleChange}
         />
         <RequiredTextField
           name="password"
+          value={data.password}
           placeholder="Senha"
           type="password"
           onChange={handleChange}
         />
         <RequiredTextField
           name="confirmPassword"
+          value={data.confirmPassword}
           placeholder="Repita a senha"
           type="password"
           onChange={handleChange}
