@@ -1,5 +1,6 @@
 type Props = {
   name: string;
+  value: string;
   type: string;
   placeholder: string;
   spanText?: string;
@@ -9,6 +10,7 @@ type Props = {
 
 export function RequiredTextField({
   name,
+  value,
   type,
   placeholder,
   spanText,
@@ -22,6 +24,7 @@ export function RequiredTextField({
         className="input"
         type={type}
         name={name}
+        value={value}
         placeholder={placeholder}
         required
         onChange={onChange}

@@ -12,6 +12,7 @@ describe("Required Text Field component", () => {
       type: "text",
       placeholder: "Test placeholder",
       bordered: true,
+      value: "",
       onChange: jest.fn(),
     };
 
@@ -25,6 +26,7 @@ describe("Required Text Field component", () => {
       name: "test",
       type: "password",
       placeholder: "Test placeholder",
+      value: "",
       onChange: jest.fn(),
     };
 
@@ -38,6 +40,7 @@ describe("Required Text Field component", () => {
       name: "test",
       type: "text",
       placeholder: "Test placeholder",
+      value: "",
       onChange: jest.fn(),
     };
 
@@ -46,8 +49,5 @@ describe("Required Text Field component", () => {
 
     fireEvent.change(input, { target: { value: "123" } });
     expect(props.onChange).toBeCalledTimes(1);
-
-    fireEvent.change(input, { target: { value: "" } });
-    expect(props.onChange).toBeCalledTimes(2);
   });
 });

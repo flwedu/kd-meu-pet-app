@@ -11,6 +11,7 @@ exports[`Required Text Field component Should render a password component proper
       placeholder="Test placeholder"
       required=""
       type="password"
+      value=""
     />
   </div>
 </div>
@@ -27,6 +28,7 @@ exports[`Required Text Field component Should render a text component properly 1
       placeholder="Test placeholder"
       required=""
       type="text"
+      value=""
     />
   </div>
 </div>
