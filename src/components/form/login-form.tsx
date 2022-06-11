@@ -1,7 +1,11 @@
 import { FormEvent, useState } from "react";
 import { RequiredTextField } from "../form-components/required-text-field";
 
-export function LoginForm() {
+export function LoginForm({
+  onSubmit,
+}: {
+  onSubmit: (username: string, password: string) => void;
+}) {
   const [data, setData] = useState({ username: "", password: "" });
 
   function handleChange(e: FormEvent<HTMLInputElement>) {
@@ -10,8 +14,15 @@ export function LoginForm() {
     setData({ ...data, [name]: value });
   }
 
-  function handleSubmit() {
-    console.log("Submitted");
+  function checkFormValidity(form: HTMLFormElement) {
+    return form.checkValidity();
+  }
+
+  function handleSubmit(e: FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    if (checkFormValidity(e.currentTarget)) {
+      onSubmit(data.username, data.password);
+    }
   }
 
   return (
