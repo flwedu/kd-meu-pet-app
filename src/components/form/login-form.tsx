@@ -34,17 +34,19 @@ export function LoginForm({
       className="form form-login align-center flex flex-col rounded"
       onSubmit={handleSubmit}
     >
-      <div onChange={handleChange}>
+      <div>
         <h2>Bem vindo!</h2>
         <p>Por favor, se identifique:</p>
         <RequiredTextField
           name="username"
+          value={data.username}
           placeholder="Nome de usuário"
           type="text"
           onChange={handleChange}
         />
         <RequiredTextField
-          name="pasword"
+          name="password"
+          value={data.password}
           placeholder="Senha"
           type="password"
           onChange={handleChange}
