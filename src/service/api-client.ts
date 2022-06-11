@@ -48,4 +48,6 @@ export const createApiClient = () => {
     }
     return await response.json();
   };
+
+  return { get, post, delete_, put };
 };
