@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { ChangeEvent, FormEvent, useState } from "react";
 import { ColorPicker } from "../form-components/color-picker";
 import { GoogleCoordinatesPicker } from "../form-components/google-coordinates-picker";
 import { PickerGroup } from "../form-components/picker-group";
@@ -18,7 +18,15 @@ export type MissingAnimalData = {
 };
 
 export function MissingAnimalForm() {
-  const [data, setData] = useState({});
+  const [data, setData] = useState<MissingAnimalData>({
+    name: "",
+    color: [],
+    description: "",
+    location: { lat: 0, lng: 0 },
+    picture: "",
+    sex: "male",
+    specie: "cat",
+  });
 
   const specieOptions = [
     { id: "cat", text: "🐱 Gato", alt: "Gato" },
@@ -26,13 +34,14 @@ export function MissingAnimalForm() {
     { id: "other", text: "❓ Outros", alt: "Outros" },
   ];
 
-  function handleChange(e: any) {
+  function handleChange(
+    e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) {
     const { name, value } = e.currentTarget;
-
-    setData({ ...data, [name]: value });
+    return setData({ ...data, [name]: value });
   }
 
-  function handleSubmit(e: any) {
+  function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
     console.log(data);
   }
@@ -44,6 +53,7 @@ export function MissingAnimalForm() {
       <form onSubmit={handleSubmit}>
         <PickerGroup
           disabled={false}
+          value={data.specie}
           spanText="Qual a espécie?"
           name="specie"
           options={specieOptions}
@@ -52,6 +62,7 @@ export function MissingAnimalForm() {
 
         <RequiredTextField
           name="name"
+          value={data.name}
           spanText="Nome (apelido) do animal"
           placeholder=""
           type="text"
@@ -61,8 +72,9 @@ export function MissingAnimalForm() {
         <div className="form-field">
           <span>Descrição:</span>
           <textarea
-            className="input"
             name="description"
+            value={data.description}
+            className="input"
             id="description"
             placeholder="digite uma descrição em até 250 caracteres"
             rows={5}
@@ -75,6 +87,7 @@ export function MissingAnimalForm() {
         <PickerGroup
           disabled={false}
           name="sex"
+          value={data.sex}
           spanText="Sexo?"
           options={[
             { id: "male", text: "M", alt: "Macho" },
