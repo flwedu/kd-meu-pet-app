@@ -6,6 +6,7 @@ describe("PickerGroup component tests", () => {
     name: "Tests",
     spanText: "Testing Text",
     options: [],
+    value: "",
     onChange: jest.fn(),
     disabled: false,
   };

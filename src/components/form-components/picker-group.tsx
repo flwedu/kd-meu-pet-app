@@ -6,6 +6,7 @@ export type PickerOption = {
 
 type PickerProps = {
   spanText: string;
+  value: string;
   name: string;
   disabled: boolean;
   options: PickerOption[];
@@ -24,6 +25,7 @@ export function PickerGroup(props: PickerProps) {
           value={item.id}
           alt={item.alt}
           onChange={props.onChange}
+          defaultChecked={item.id === props.value}
           required
         />{" "}
         {item.text}
