@@ -1,39 +1,50 @@
 import { useState } from "react";
 
+type Color = {
+  name: string;
+  bgColor: string;
+  fontColor: string;
+};
+
+const DefaultAcceptedColors: Color[] = [
+  { name: "Preto", bgColor: "black", fontColor: "white" },
+  { name: "Branco", bgColor: "white", fontColor: "black" },
+  { name: "Amarelo", bgColor: "yellow", fontColor: "black" },
+  { name: "Marrom", bgColor: "brown", fontColor: "black" },
+  { name: "Caramelo", bgColor: "orange", fontColor: "black" },
+  { name: "Cinza", bgColor: "grey", fontColor: "black" },
+];
+
 export function ColorPicker() {
-  const [colors, setColors] = useState<string[]>([]);
-  const [text, setText] = useState<string>("");
+  const [colors, setColors] = useState<Color[]>(DefaultAcceptedColors);
+  const [selectedColors, setSelectedColors] = useState<Color[]>([]);
 
-  function handleTextChange(e: any) {
-    setText(e.currentTarget.value);
+  function handleClick(e: any) {
+    e.preventDefault();
+    setSelectedColors([...selectedColors, e.target.value]);
   }
 
-  function handleKeyPress(e: any) {
-    if (e.key === "Enter") {
-      handleSubmit();
-    }
-  }
-
-  function handleSubmit() {
-    setColors([...colors, text]);
-    setText("");
-  }
-
-  function renderColor(value: string, index: number) {
-    return <li key={index}>{value}</li>;
+  function renderColorButton(color: Color, index: number) {
+    return (
+      <input
+        key={color.name}
+        className="button"
+        type="button"
+        onClick={handleClick}
+        value={color.name}
+        style={{
+          color: color.fontColor,
+          background: color.bgColor,
+          width: "6rem",
+        }}
+      />
+    );
   }
 
   return (
     <div className="form-field">
       <span>Cores:</span>
-      <ul>{colors.map(renderColor)}</ul>
-      <input
-        type="text"
-        name="color"
-        value={text}
-        onChange={handleTextChange}
-        onKeyDown={handleKeyPress}
-      />
+      {colors.map(renderColorButton)}
     </div>
   );
 }
