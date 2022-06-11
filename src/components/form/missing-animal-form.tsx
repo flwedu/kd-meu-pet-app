@@ -4,6 +4,19 @@ import { GoogleCoordinatesPicker } from "../form-components/google-coordinates-p
 import { PickerGroup } from "../form-components/picker-group";
 import { RequiredTextField } from "../form-components/required-text-field";
 
+export type MissingAnimalData = {
+  name: string;
+  color: string[];
+  location: {
+    lat: number;
+    lng: number;
+  };
+  description: string;
+  specie: string;
+  sex: "male" | "female";
+  picture: string;
+};
+
 export function MissingAnimalForm() {
   const [data, setData] = useState({});
 
