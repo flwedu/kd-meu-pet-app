@@ -1,11 +1,13 @@
+import { ChangeEvent } from "react";
+
 type Props = {
   name: string;
-  value: string;
   type: string;
   placeholder: string;
+  value?: string;
   spanText?: string;
   bordered?: boolean;
-  onChange: (e: any) => void;
+  onChange: (e: ChangeEvent<HTMLInputElement>) => void;
 };
 
 export function RequiredTextField({
@@ -24,7 +26,7 @@ export function RequiredTextField({
         className="input"
         type={type}
         name={name}
-        value={value}
+        value={value || ""}
         placeholder={placeholder}
         required
         onChange={onChange}
