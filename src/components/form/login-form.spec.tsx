@@ -3,6 +3,7 @@ import { LoginForm } from "./login-form";
 
 describe("LoginForm component tests", () => {
   const onSubmit = jest.fn();
+
   beforeEach(() => {
     jest.clearAllMocks();
   });
@@ -13,7 +14,7 @@ describe("LoginForm component tests", () => {
     expect(container).toMatchSnapshot();
   });
 
-  test("should call onSubmit only if the username and password fields are valid", () => {
+  test("should call onSubmit() only if the username and password fields are valid", () => {
     const { getByPlaceholderText } = render(<LoginForm onSubmit={onSubmit} />);
 
     const usernameInput = getByPlaceholderText(
@@ -26,8 +27,8 @@ describe("LoginForm component tests", () => {
 
     expect(onSubmit).not.toHaveBeenCalled();
 
-    fireEvent.change(usernameInput, { target: { value: "test" } });
-    fireEvent.change(passwordInput, { target: { value: "test" } });
+    fireEvent.change(usernameInput, { target: { value: "usernameTest" } });
+    fireEvent.change(passwordInput, { target: { value: "password" } });
 
     fireEvent.submit(form);
 

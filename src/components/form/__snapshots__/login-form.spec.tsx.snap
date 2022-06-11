@@ -21,6 +21,7 @@ exports[`LoginForm component tests should render the component properly with the
           placeholder="Nome de usuário"
           required=""
           type="text"
+          value=""
         />
       </div>
       <div
@@ -28,10 +29,11 @@ exports[`LoginForm component tests should render the component properly with the
       >
         <input
           class="input"
-          name="pasword"
+          name="password"
           placeholder="Senha"
           required=""
           type="password"
+          value=""
         />
       </div>
     </div>
