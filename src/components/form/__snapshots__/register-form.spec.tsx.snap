@@ -1,0 +1,73 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RegisterForm component tests should render the component properly 1`] = `
+<div>
+  <form
+    class="form form-login align-center flex flex-col rounded"
+  >
+    <div>
+      <h2>
+        Formulário de cadastro
+      </h2>
+      <p>
+        Por favor, insira seus dados abaixo
+      </p>
+      <div
+        class="field"
+      >
+        <input
+          class="input"
+          name="name"
+          placeholder="Nome completo"
+          required=""
+          type="text"
+        />
+      </div>
+      <div
+        class="field"
+      >
+        <input
+          class="input"
+          name="username"
+          placeholder="Username"
+          required=""
+          type="text"
+        />
+      </div>
+      <div
+        class="field"
+      >
+        <input
+          class="input"
+          name="email"
+          placeholder="E-mail"
+          required=""
+          type="email"
+        />
+      </div>
+      <div
+        class="field"
+      >
+        <input
+          class="input"
+          name="password"
+          placeholder="Senha"
+          required=""
+          type="password"
+        />
+      </div>
+      <div
+        class="field"
+      >
+        <input
+          class="input"
+          name="confirmPassword"
+          placeholder="Repita a senha"
+          required=""
+          type="password"
+        />
+      </div>
+    </div>
+  </form>
+</div>
+`;
