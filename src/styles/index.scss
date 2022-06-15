@@ -18,6 +18,18 @@ textarea {
   text-align: center;
 }
 
+nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+
+  * {
+    text-decoration: none;
+    margin: 0;
+  }
+}
+
 #map {
   width: 25rem;
   height: 25rem;

@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { Navbar } from "./components/layout/navbar";
 import {
   HomePage,
   LoginPage,
@@ -13,6 +14,7 @@ import "./styles/index.scss";
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
     <BrowserRouter>
+      <Navbar />
       <h1>Kd Meu Pet?</h1>
       <Routes>
         <Route path="login" element={<LoginPage />} />
