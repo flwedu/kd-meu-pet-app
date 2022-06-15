@@ -5,7 +5,7 @@ export type PickerOption = {
 };
 
 type PickerProps = {
-  spanText: string;
+  descriptionText?: string;
   value: string;
   name: string;
   disabled: boolean;
@@ -35,7 +35,7 @@ export function PickerGroup(props: PickerProps) {
 
   return (
     <div className="form-field">
-      <span>{props.spanText}</span>
+      <p>{props.descriptionText}</p>
       <div className="radio-group flex flex-col">
         {props.options.map(renderOption)}
       </div>

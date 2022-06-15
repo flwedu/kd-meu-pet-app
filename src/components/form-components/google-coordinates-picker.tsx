@@ -12,7 +12,10 @@ const salvadorCoordinates = {
   lng: -38.476665,
 };
 
-function MapComponent(props: { spanText: string; onChange: (e: any) => void }) {
+function MapComponent(props: {
+  descriptionText: string;
+  onChange: (e: any) => void;
+}) {
   const { isLoaded } = useJsApiLoader({
     id: "google-map-script",
     googleMapsApiKey: import.meta.env.VITE_GOOGLE_MAPS_KEY,
@@ -76,7 +79,7 @@ function MapComponent(props: { spanText: string; onChange: (e: any) => void }) {
 
   return isLoaded ? (
     <div className="form-group">
-      <span>{props.spanText}</span>
+      <p>{props.descriptionText}</p>
       <GoogleMap
         id="map"
         center={location ? location : defaultLocation}

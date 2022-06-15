@@ -43,7 +43,7 @@ export function ColorPicker() {
 
   return (
     <div className="form-field">
-      <span>Cores:</span>
+      <p>Cores:</p>
       {colors.map(renderColorButton)}
     </div>
   );

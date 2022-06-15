@@ -5,9 +5,7 @@ exports[`PickerGroup component tests should render the component properly With o
   <div
     class="form-field"
   >
-    <span>
-      Testing Text
-    </span>
+    <p />
     <div
       class="radio-group flex flex-col"
     >
@@ -33,9 +31,7 @@ exports[`PickerGroup component tests should render the component properly With z
   <div
     class="form-field"
   >
-    <span>
-      Testing Text
-    </span>
+    <p />
     <div
       class="radio-group flex flex-col"
     />

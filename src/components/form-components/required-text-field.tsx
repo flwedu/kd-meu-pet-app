@@ -5,7 +5,7 @@ type Props = {
   type: string;
   placeholder: string;
   value?: string;
-  spanText?: string;
+  descriptionText?: string;
   bordered?: boolean;
   onChange: (e: ChangeEvent<HTMLInputElement>) => void;
 };
@@ -15,13 +15,13 @@ export function RequiredTextField({
   value,
   type,
   placeholder,
-  spanText,
+  descriptionText,
   bordered,
   onChange,
 }: Props) {
   return (
     <div className={bordered ? "form-field" : "field"}>
-      {spanText && <span>{spanText}</span>}
+      {descriptionText && <p>{descriptionText}</p>}
       <input
         className="input"
         type={type}

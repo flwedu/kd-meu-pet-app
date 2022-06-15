@@ -54,7 +54,7 @@ export function MissingAnimalForm() {
         <PickerGroup
           disabled={false}
           value={data.specie}
-          spanText="Qual a espécie?"
+          descriptionText="Qual a espécie?"
           name="specie"
           options={specieOptions}
           onChange={handleChange}
@@ -63,14 +63,14 @@ export function MissingAnimalForm() {
         <RequiredTextField
           name="name"
           value={data.name}
-          spanText="Nome (apelido) do animal"
+          descriptionText="Nome (apelido) do animal"
           placeholder=""
           type="text"
           onChange={handleChange}
           bordered={true}
         />
         <div className="form-field">
-          <span>Descrição:</span>
+          <p>Descrição:</p>
           <textarea
             name="description"
             value={data.description}
@@ -88,7 +88,7 @@ export function MissingAnimalForm() {
           disabled={false}
           name="sex"
           value={data.sex}
-          spanText="Sexo?"
+          descriptionText="Sexo?"
           options={[
             { id: "male", text: "M", alt: "Macho" },
             { id: "female", text: "F", alt: "Fêmea" },
@@ -96,12 +96,12 @@ export function MissingAnimalForm() {
           onChange={handleChange}
         />
         <div className="form-field">
-          <span>Anexe uma foto do desaparecido:</span>
+          <p>Anexe uma foto do desaparecido:</p>
           <input type="file" name="picture" id="picture" />
         </div>
 
         <GoogleCoordinatesPicker
-          spanText="Última localização:"
+          descriptionText="Última localização:"
           onChange={handleChange}
         />
 
