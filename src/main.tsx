@@ -8,19 +8,22 @@ import {
   MissingAnimalPage,
   RegisterPage,
 } from "./components/pages";
+import { AuthProvider } from "./hooks/contexts/auth-context";
 
 import "./styles/index.scss";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
-    <BrowserRouter>
-      <Navbar />
-      <h1>Kd Meu Pet?</h1>
-      <Routes>
-        <Route path="login" element={<LoginPage />} />
-        <Route path="register" element={<RegisterPage />} />
-        <Route path="missing" element={<MissingAnimalPage />} />
-      </Routes>
-    </BrowserRouter>
+    <AuthProvider>
+      <BrowserRouter>
+        <Navbar />
+        <h1>Kd Meu Pet?</h1>
+        <Routes>
+          <Route path="login" element={<LoginPage />} />
+          <Route path="register" element={<RegisterPage />} />
+          <Route path="missing" element={<MissingAnimalPage />} />
+        </Routes>
+      </BrowserRouter>
+    </AuthProvider>
   </React.StrictMode>
 );
