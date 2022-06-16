@@ -5,10 +5,8 @@ export class ApiClient {
 
   async get(url: string) {
     const response = await fetch(`${this.baseUrl}${url}`);
-    if (response.status !== 200) {
-      return Promise.reject(response);
-    }
-    return await response.json();
+
+    return await checkAndReturn(response);
   }
 
   async post(url: string, body: any) {
@@ -19,20 +17,15 @@ export class ApiClient {
       },
       body: JSON.stringify(body),
     });
-    if (response.status !== 201) {
-      return Promise.reject(response);
-    }
-    return await response.json();
+
+    return await checkAndReturn(response);
   }
 
   async delete_(url: string) {
     const response = await fetch(`${this.baseUrl}${url}`, {
       method: "DELETE",
     });
-    if (response.status !== 204) {
-      return Promise.reject(response);
-    }
-    return await response.json();
+    return await checkAndReturn(response);
   }
 
   async put(url: string, body: any) {
@@ -43,9 +36,16 @@ export class ApiClient {
       },
       body: JSON.stringify(body),
     });
-    if (response.status !== 200) {
-      return Promise.reject(response);
-    }
-    return await response.json();
+    return await checkAndReturn(response);
   }
+}
+
+function checkAndReturn(response: Response) {
+  if (checkFailure(response.status)) return Promise.reject(response);
+
+  return response.json();
+}
+
+function checkFailure(code: number) {
+  return code !== 200 && code !== 201 && code !== 204;
 }
