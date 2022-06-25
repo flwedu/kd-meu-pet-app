@@ -19,6 +19,7 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
         <Navbar />
         <h1>Kd Meu Pet?</h1>
         <Routes>
+          <Route path="/" element={<HomePage />}></Route>
           <Route path="login" element={<LoginPage />} />
           <Route path="register" element={<RegisterPage />} />
           <Route path="missing" element={<MissingAnimalPage />} />
