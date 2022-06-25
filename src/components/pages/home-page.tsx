@@ -1,7 +1,10 @@
 export function HomePage() {
   return (
-    <div className="App">
-      <p>Texto de home page</p>
+    <div className="box rounded">
+      <p>
+        Essa aplicação foi criada para ajudar você na busca daquele bichinho
+        sapeca que acabou fugindo.
+      </p>
     </div>
   );
 }

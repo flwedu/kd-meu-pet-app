@@ -17,7 +17,9 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
     <AuthProvider>
       <BrowserRouter>
         <Navbar />
-        <h1>Kd Meu Pet?</h1>
+        <div className="box rounded">
+          <h1>Kd Meu Pet?</h1>
+        </div>
         <Routes>
           <Route path="/" element={<HomePage />}></Route>
           <Route path="login" element={<LoginPage />} />

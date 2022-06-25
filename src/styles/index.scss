@@ -1,16 +1,17 @@
 @import "colors", "fonts", "classes", "mixins";
 
 html {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   color: $color--grey-700;
 }
 
 body {
   @include bg_pattern();
 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   width: 25rem;
+  margin: 1rem auto;
 }
 
 textarea {
@@ -26,7 +27,6 @@ nav {
 
   * {
     text-decoration: none;
-    margin: 0;
   }
 }
 

@@ -39,11 +39,20 @@
   background-color: $color--blue-green;
 }
 
+.box {
+  width: 100%;
+  margin: 0.5rem auto;
+  padding: 0.1rem 1rem;
+
+  text-align: center;
+  background-color: $color--light-100;
+}
+
 .form {
   width: 100%;
   min-height: min-content;
   padding: 1rem;
-  margin: 2rem;
+  margin: 2rem auto;
 
   text-align: center;
   background-color: $color--light-100;
