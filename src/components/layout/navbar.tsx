@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 export function Navbar() {
   return (
-    <nav className="navbar">
+    <nav className="navbar rounded">
       <Link to={"/"}>Home</Link>
       <Link to={"/missing"}>Registrar desaparecimento</Link>
       <Link to={"/login"}>Login</Link>
