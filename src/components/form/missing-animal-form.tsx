@@ -1,24 +1,12 @@
 import { ChangeEvent, FormEvent, useState } from "react";
+import { Animal } from "../../model";
 import { ColorPicker } from "../form-components/color-picker";
 import { GoogleCoordinatesPicker } from "../form-components/google-coordinates-picker";
 import { PickerGroup } from "../form-components/picker-group";
 import { RequiredTextField } from "../form-components/required-text-field";
 
-export type MissingAnimalData = {
-  name: string;
-  color: string[];
-  location: {
-    lat: number;
-    lng: number;
-  };
-  description: string;
-  specie: string;
-  sex: "male" | "female";
-  picture: string;
-};
-
 export function MissingAnimalForm() {
-  const [data, setData] = useState<MissingAnimalData>({
+  const [data, setData] = useState<Animal>({
     name: "",
     color: [],
     description: "",

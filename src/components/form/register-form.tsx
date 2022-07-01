@@ -1,12 +1,10 @@
 import { FormEvent, useState } from "react";
+import { User } from "../../model";
 import { RequiredTextField } from "../form-components/required-text-field";
 
 export type RegisterFormData = {
-  name: string;
-  username: string;
-  email: string;
   password: string;
-};
+} & Omit<User, "id">;
 
 export function RegisterForm({
   onSubmit,
