@@ -11,29 +11,12 @@ body {
   flex-direction: column;
   align-items: center;
   width: 25rem;
-  margin: 3rem auto;
+  margin: 0 auto;
 }
 
 textarea {
   resize: vertical;
   text-align: center;
-}
-
-nav {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  position: fixed;
-  top: 0;
-  width: 100vh;
-  padding: 1rem 2rem;
-  background-color: $color--light-100;
-
-  * {
-    text-decoration: none;
-    @include gradientText($color--blue, $color--blue-green);
-  }
 }
 
 #map {

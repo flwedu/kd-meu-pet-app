@@ -40,7 +40,6 @@
 }
 
 .box {
-  width: 100%;
   margin: 0.5rem auto;
   padding: 0.1rem 1rem;
 
@@ -49,10 +48,8 @@
 }
 
 .form {
-  width: 100%;
   min-height: min-content;
   padding: 1rem;
-  margin: 2rem auto;
 
   text-align: center;
   background-color: $color--light-100;
@@ -87,4 +84,19 @@
 .radio-group {
   font-size: 1rem;
   align-items: center;
+}
+
+.navbar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  background-color: $color--light-100;
+  border-radius: 0 0 15px 15px;
+
+  * {
+    text-decoration: none;
+    @include gradientText($color--blue, $color--blue-green);
+  }
 }
