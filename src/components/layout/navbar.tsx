@@ -1,13 +1,18 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 
 export function Navbar() {
+  const [logged, setLogged] = useState(false);
+
   return (
-    <nav className="navbar rounded">
+    <nav className="navbar">
       <Link to={"/"}>Home</Link>
       <Link to={"/missing"}>Registrar desaparecimento</Link>
-      <Link to={"/login"}>Login</Link>
-      <Link to={"/register"}>Registrar</Link>
-      <Link to={"/logout"}>Logout</Link>
+      {logged ? (
+        <Link to={"/logout"}>Sair</Link>
+      ) : (
+        <Link to={"/login"}>Entrar</Link>
+      )}
     </nav>
   );
 }
